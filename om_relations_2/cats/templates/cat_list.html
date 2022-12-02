@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of cats</title>
+</head>
+<body style="background-color: purple; color:white;">
+<h1> List of all cats:</h1>
+{% for cat in cat_list %}
+<ul>
+    <li><a style='color:white' href="{% url 'cat' cat.id %}">{{cat.nickname}}</a></li>
+</ul>
+{% empty %}
+<p>No entries.</p>
+{% endfor %}
+</body>
+</html>
